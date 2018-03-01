@@ -8,7 +8,7 @@
 struct _Stack {
     int top; 
     Element * item[MAXSTACK];
-}
+};
 
 stack * stack_ini(){
     stack *s;
