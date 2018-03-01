@@ -1,5 +1,5 @@
-#ifndef POINT_H
-#define POINT_H
+#ifndef STACK_ELEMENT_H
+#define STACK_ELEMENT_H
 
 typedef struct _Stack Stack;
 
