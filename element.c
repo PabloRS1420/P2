@@ -49,7 +49,7 @@ Bool element_equals(const element *e1, const element *e2){
 }
 
 int element_print(FILE *f, const element *e){
-    return fprintf(f, "%d", e->info);
+    return fprintf(f, "%d", *e->info);
 }
 
 
