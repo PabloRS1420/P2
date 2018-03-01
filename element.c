@@ -27,7 +27,7 @@ Status element_setInfo(element *e, void *v){
     return OK;
 }
 
-void element_getInfo(element *e){
+void *element_getInfo(element *e){
     if(!e) return NULL;
     void v;
     v=e->info;
@@ -49,7 +49,7 @@ Bool element_equals(const element *e1, const element *e2){
 }
 
 int element_print(FILE *f, const element *e){
-    return fprintf(f, "%v", e->info);
+    return fprintf(f, "%d", e->info);
 }
 
 
