@@ -10,7 +10,7 @@ struct _Stack {
     Element * item[MAXSTACK];
 };
 
-stack * stack_ini(){
+stack *stack_ini(){
     stack *s;
     s = (stack *) malloc(siceof(stack));
     if(!s) return NULL;
@@ -65,7 +65,7 @@ Bool stack_isEmpty(const stack *s){
     else return FALSE;
 }
 
-int Sstack_print(FILE *f, const stack *s){
+int stack_print(FILE *f, const stack *s){
 }
 
 
