@@ -11,7 +11,7 @@ struct _Stack {
 };
 
 stack *stack_ini(){
-    stack *s;
+    stack *s = NULL;
     s = (stack *) malloc(siceof(stack));
     if(!s) return NULL;
     
