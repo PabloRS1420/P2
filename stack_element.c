@@ -66,6 +66,7 @@ Bool stack_isEmpty(const stack *s){
 }
 
 int stack_print(FILE *f, const stack *s){
+    return fprintf(f, "%d, %", stack.top, stack_top(s));
 }
 
 
