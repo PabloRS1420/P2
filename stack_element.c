@@ -60,7 +60,7 @@ Bool stack_isEmpty(const stack *s){
     else return FALSE;
 }
 
-Bool stack_isEmpty(const stack *s){
+Bool stack_isFULL(const stack *s){
     if(s.top==MAXSTACK) return TRUE;
     else return FALSE;
 }
