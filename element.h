@@ -1,6 +1,18 @@
 #ifndef ELEMENT_H
 #define ELEMENT_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "types.h"
+#define ERRORCHAR 'E'
+#define INPUT 'i'
+#define VISITED 'v'
+#define OUTPUT 'o'
+#define BARRIER '+'
+#define SPACE ' '
+
 typedef struct _Stack Stack;
 
 Element *element_ini();
