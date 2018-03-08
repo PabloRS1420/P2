@@ -140,6 +140,6 @@ Point *point_copy (const Point *p) {
 }
 
 int point_print(FILE *f, const Point *p){
-    return fprintf(f, "[(%d,%d): %c]", point_getCoordinateX(p), point_getCoordinateY(p), point_getSymbol(p));
+    return fprintf(f, "[(%d,%d): %c]\n", point_getCoordinateX(p), point_getCoordinateY(p), point_getSymbol(p));
 }
 
