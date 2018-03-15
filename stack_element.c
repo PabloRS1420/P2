@@ -36,7 +36,7 @@ Status stack_push(stack *s, const point *p){
 Point stack_pop(stact *s){
     Point *p;
     if(pila_vacia==TRUE) return NULL;
-    p = point_ini(0, 0, 0);
+    p = point_ini(0, 0, +);
     if(!p) return NULL;
     
     p = point_copy(s->item[s.top]);
@@ -48,7 +48,7 @@ Point stack_pop(stact *s){
 Point stack_top(const stact *s){
     Point *p;
     if(pila_vacia==TRUE) return NULL;
-    p = point_ini(0, 0, 0);
+    p = point_ini(0, 0, +);
     if(!p) return NULL;
     
     p = point_copy(s->item[s.top]);
