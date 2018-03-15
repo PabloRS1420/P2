@@ -127,7 +127,7 @@ Bool point_equals(const Point *p1,const Point *p2){
     }
 }
 
-Point *point_copy (const Point *p) {
+Point *point_copy(const Point *p) {
     if(!p){
         return NULL;
     }
@@ -141,5 +141,22 @@ Point *point_copy (const Point *p) {
 
 int point_print(FILE *f, const Point *p){
     return fprintf(f, "[(%d,%d): %c]\n", point_getCoordinateX(p), point_getCoordinateY(p), point_getSymbol(p));
+}
+
+Point deep_search(Map *m, Point *p){
+    Stack *s = stack_ini(); 
+    Point *p2 = point_ini(0, 0, +);
+    Point *p3 = point_ini(0, 0, +);
+    stack_push(s, p);
+    while (stack_isEmpty(s) != TRUE) {
+        p2 = stack_pop(s);
+        if (point_getSymbol(p2) != VISITED) {
+            point_setSymbol(p2, VISITED)
+            map_setPoint(m, p2)
+            for each p3 in neighbors(p2) {
+                if point_isOutput(p3) == TRUE return w;
+                if point_isSpace(p3) == TRUE stack_push(s, w);
+            }
+        }
 }
 
