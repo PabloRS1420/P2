@@ -7,7 +7,7 @@
 
 struct _Stack {
     int top; 
-    Element * item[MAXSTACK];
+    Point * item[MAXSTACK];
 };
 
 stack *stack_ini(){
@@ -23,8 +23,8 @@ void stack_destroy(stack *s){
     if(s) free(s);
 }
 
-Status stack_push(stack *s, const Element *e){
-    if(!s || !e) return ERROR;
+Status stack_push(stack *s, const point *p){
+    if(!s || !p) return ERROR;
     
     if(pila_llena) return ERROR;
     
@@ -33,25 +33,25 @@ Status stack_push(stack *s, const Element *e){
     return OK;
 }
 
-Element stack_pop(stact *s){
-    Element *e;
+Point stack_pop(stact *s){
+    Point *p;
     if(pila_vacia==TRUE) return NULL;
-    e = element_ini;
-    if(!e) return NULL;
+    p = point_ini(0, 0, 0);
+    if(!p) return NULL;
     
-    e = s->item[s.top];
+    p = point_copy(s->item[s.top]);
     s->item[s.top] = NULL;
     s.top--
     return e;
 }
 
-Element stack_top(const stact *s){
-    Element *e;
+Point stack_top(const stact *s){
+    Point *p;
     if(pila_vacia==TRUE) return NULL;
-    e = element_ini;
-    if(!e) return NULL;
+    p = point_ini(0, 0, 0);
+    if(!p) return NULL;
     
-    e = s->item[s.top];
+    p = point_copy(s->item[s.top]);
     return e;
 }
 
