@@ -5,8 +5,7 @@ typedef enum {
     RIGHT=0,  
     UP=1,  
     LEFT=2,  
-    DOWN=3,  
-    
+    DOWN=3, 
     STAY=4 
 } Move;
 
@@ -22,5 +21,6 @@ Point * map_getNeighborPoint(const Map * map, const Point *p, const Move mov);
 Status map_setSize(Map *map, int row, int col);
 Status map_setPoint(Map *map, const Point *p);
 int map_print(FILE *f, const map *map);
+Point deep_search(Map *map, Point *p);
 
 #endif
