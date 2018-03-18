@@ -4,11 +4,11 @@
 typedef struct _Stack Stack;
 
 Element *element_ini();
-void element_destroy(element *);
-Status element_setInfo(element *, void *);
-Point element_getInfo(element *);
-Element *element_copy(const element *);
-Bool element_equals(const element *, const element *);
-int element_print(FILE *, const element *);
+void element_destroy(element *e);
+Status element_setInfo(element *e, point *p);
+Point element_getInfo(element *e);
+Element *element_copy(const element *e);
+Bool element_equals(const element *e1, const element *e2);
+int element_print(FILE *f, const element *e);
 
 #endif
