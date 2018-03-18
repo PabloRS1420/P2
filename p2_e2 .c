@@ -7,12 +7,9 @@
 
 int main(int argc, char * argv[]){
     printf("> ./p2_e2 "%s"", argv[1]);
-    Stack *s = NULL;
-    Element *e = NULL;
-    Point *p = NULL;
-    s = stack_ini();
-    e = element_ini();
-    p = point_ini();
+    Stack *s = stack_ini();
+    Element *e = element_ini();
+    Point *p = point_ini();
     FILE *fp = fopen("argv[1]", "r+");
     int nFil, nCol, i, j;
     char symbol;
