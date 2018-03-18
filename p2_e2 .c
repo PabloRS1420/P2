@@ -19,21 +19,21 @@ int main(int argc, char * argv[]){
     fscanf(fp, "%d %d", &nFil, &nCol);
 	
     for(i=0; i<nFil; i++){
-		for(j=0; i<nCol; j++) {
-			fscanf(fp, "%s", symbol);
-			point_setCoordinateX(p, i);
-			point_setCoordinateY(p, j);
-			point_setSymbol(p, symbol);
-			element_setInfo(e, p);
-			stack_push(s, e);
+        for(j=0; i<nCol; j++) {
+            fscanf(fp, "%s", symbol);
+            point_setCoordinateX(p, i);
+            point_setCoordinateY(p, j);
+            point_setSymbol(p, symbol);
+            element_setInfo(e, p);
+            stack_push(s, e);
 		}
 	}
 	
 	for(; i>=0; i--){
-		for(; j>=0, j--){
-			e = stack_pop(s);
-			p = element_getInfo(e);
-			point_print(fp, p);
+        for(; j>=0, j--){
+            e = stack_pop(s);
+            p = element_getInfo(e);
+            point_print(fp, p);
 		}
 	}
    
