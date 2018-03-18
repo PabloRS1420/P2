@@ -6,7 +6,6 @@
 #include "types.h"
 
 int main(int argc, char * argv[]){
-	
 	printf("> ./p2_e2 "%s"", argv[1]);
     Stack *s = NULL;
 	Element *e = NULL;
