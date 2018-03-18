@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "map.h"
 #include "point.h"
+#include "stack_element.h"
+#include "element.h"
 #include "types.h"
 
 typedef struct _Map {
@@ -137,10 +139,11 @@ Point deep_search(Map *map, Point *p){
             point_setSymbol(p2, VISITED)
             map_setPoint(m, p2)
             for(i=0; i<5; i++){
-		p3 = map_getNeighborPoint(map, p, i);
+	            p3 = map_getNeighborPoint(map, p, i);
                 if point_isOutput(p3) == TRUE return w;
                 if point_isSpace(p3) == TRUE stack_push(s, w);
             }
         }
     }
+	return NULL;
 }
