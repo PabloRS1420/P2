@@ -8,7 +8,6 @@
 int main(int argc, char * argv[]){
     int nFil, nCol, i, j;
     char symbol;
-    Point *p = point_ini();
     Point *pAUX = point_ini()
     Point *pOutput = point_ini();
     Map *map = map_ini();
@@ -23,12 +22,13 @@ int main(int argc, char * argv[]){
             point_setCoordinateY(pAux, j);
             point_setSymbol(pAux, symbol);
             map_setPoint(map, pAux);
-            }
         }
     }
-    p = map_getInput(const Map *map);
+    
+    pAux = map_getInput(map);
     pOtput = deep_search(map, p);
-    if(pOutput!=NULL) printf("Es posible encontrar un camino");
+    pAux = map_getOutput(map);
+    if(point_equals(pAux, pOutput) printf("Es posible encontrar un camino");
     else printf("No es posible encontrar un camino");
     return 1;
 }
