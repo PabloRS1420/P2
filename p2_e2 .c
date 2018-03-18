@@ -10,11 +10,11 @@ int main(int argc, char * argv[]){
     Stack *s = NULL;
 	Element *e = NULL;
 	Point *p = NULL;
-    s = stack_ini();
+   	s = stack_ini();
 	e = element_ini();
 	p = point_ini();
-    FILE *fp = fopen("argv[1]", "r+");
-    int nFil, nCol, i, j;
+   	FILE *fp = fopen("argv[1]", "r+");
+   	int nFil, nCol, i, j;
 	char symbol;
 	fscanf(fp, "%d %d", &nFil, &nCol);
 	
