@@ -121,3 +121,23 @@ Status map_setPoint(Map *map, const Point *p){
 int map_print(FILE *f, const map *map){
     return fprintf(f, "Filas: %d, Columnas: %d", map_getNrows(map), map_getNcols(map));
 }
+
+Point deep_search(Map *map, Point *p){
+    Stack *s = stack_ini();
+	int i;
+    Point *p2 = point_ini(0, 0, +);
+    Point *p3 = point_ini(0, 0, +);
+    stack_push(s, p);
+    while(stack_isEmpty(s) != TRUE) {
+        p2 = stack_pop(s);
+        if(point_getSymbol(p2) != VISITED) {
+            point_setSymbol(p2, VISITED)
+            map_setPoint(m, p2)
+            for(i=0; i<5; i++){
+		p3 = map_getNeighborPoint(map, p, i);
+                if point_isOutput(p3) == TRUE return w;
+                if point_isSpace(p3) == TRUE stack_push(s, w);
+            }
+        }
+    }
+}
