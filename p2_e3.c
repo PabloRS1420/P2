@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include "stack_element.h"
+#include "element.h"
+#include "point.h"
+#include "map.h"
+#include "types.h"
+
+int main(int argc, char * argv[]){
+    int nFil, nCol, i, j;
+    char symbol;
+    Point *p = point_ini();
+    Point *pAUX = point_ini()
+    Point *pOutput = point_ini();
+    Map *map = map_ini();
+    FILE *fp = fopen("argv[1]", "r+");
+    fscanf(fp, "%d %d", &nFil, &nCol);
+    map_setSize(map, nFil, nCol);
+    
+    for(i=0; i<nFil; i++){
+        for(j=0; i<nCol; j++){
+            fscanf(fp, "%s", symbol);
+            point_setCoordinateX(pAux, i);
+            point_setCoordinateY(pAux, j);
+            point_setSymbol(pAux, symbol);
+            map_setPoint(map, pAux);
+            }
+        }
+    }
+    p = map_getInput(const Map *map);
+    pOtput = deep_search(map, p);
+    if(pOutput!=NULL) printf("Es posible encontrar un camino");
+    else printf("No es posible encontrar un camino");
+    return 1;
+}
+    
