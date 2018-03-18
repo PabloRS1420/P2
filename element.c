@@ -48,8 +48,7 @@ Bool element_equals(const element *e1, const element *e2){
 }
 
 int element_print(FILE *f, const element *e){
-    int i = point_print(f, e->info);
-    return i;
+    return point_print(f, e->info);
 }
 
 
