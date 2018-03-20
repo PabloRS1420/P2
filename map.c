@@ -12,14 +12,14 @@ typedef struct _Map {
 }
  
 Map *map_ini (){
-    Map *m=NULL;
-    m=(map*) malloc(siceof(map));
+    Map *m = NULL;
+    m = (Map *) malloc(siceof(Map));
     if(m==NULL) return NULL;
 
     return m;
 }
 
-void map_destroy(map *map){
+void map_destroy(Map *map){
     if(map!=NULL) free(map);
 }
 
@@ -29,7 +29,7 @@ int map_getNrows(const Map *map){
     return map.nRows;
 }
 
-int map_getNcols(const map *map){
+int map_getNcols(const Map *map){
     if(map==NULL) return NULL;
 
     return map.nCols;
@@ -123,7 +123,7 @@ Status map_setPoint(Map *map, const Point *p){
     return OK;
 }
 
-int map_print(FILE *f, const map *map){
+int map_print(FILE *f, const Map *map){
     return fprintf(f, "Filas: %d, Columnas: %d", map_getNrows(map), map_getNcols(map));
 }
 
