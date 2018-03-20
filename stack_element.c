@@ -12,15 +12,15 @@ struct _Stack {
 };
 
 stack *stack_ini(){
-    stack *s = NULL;
-    s = (stack *) malloc(siceof(stack));
+    Stack *s = NULL;
+    s = (Stack *) malloc(siceof(Stack));
     if(!s) return NULL;
     
     s.top = 0;
     return s;
 }
 
-void stack_destroy(stack *s){
+void stack_destroy(Stack *s){
     int i;
     if(s){
         for(i=s.top; i>0; i--){
@@ -29,7 +29,7 @@ void stack_destroy(stack *s){
         free(s);
 }
 
-Status stack_push(stack *s, const element  *p){
+Status stack_push(Stack *s, const Element  *p){
     if(!s || !p) return ERROR;
     
     if(pila_llena) return ERROR;
@@ -39,7 +39,7 @@ Status stack_push(stack *s, const element  *p){
     return OK;
 }
 
-Element stack_pop(stact *s){
+Element stack_pop(Stact *s){
     Element *e;
     if(pila_vacia==TRUE) return NULL;
     e = element_ini();
@@ -51,7 +51,7 @@ Element stack_pop(stact *s){
     return e;
 }
 
-Element stack_top(const stact *s){
+Element stack_top(const Stact *s){
     Element *e;
     if(pila_vacia==TRUE) return NULL;
     e = element_ini();
@@ -61,17 +61,17 @@ Element stack_top(const stact *s){
     return e;
 }
 
-Bool stack_isEmpty(const stack *s){
+Bool stack_isEmpty(const Stack *s){
     if(s.top==0) return TRUE;
     else return FALSE;
 }
 
-Bool stack_isFULL(const stack *s){
+Bool stack_isFULL(const Stack *s){
     if(s.top==MAXSTACK) return TRUE;
     else return FALSE;
 }
 
-int stack_print(FILE *f, const stack *s){
+int stack_print(FILE *f, const Stack *s){
     int i, j = 0;
     for(i=s.top, j=0; i>0; i--){
         j = j + element_print(f, s->item[i]);
