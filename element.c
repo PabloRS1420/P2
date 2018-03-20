@@ -17,7 +17,7 @@ Element *element_ini(){
 }
 
 void element_destroy(element *e){
-    if(e) return e;
+    if(e) free(e);
 }
 
 Status element_setInfo(element *e, point *p){
