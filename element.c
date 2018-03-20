@@ -10,45 +10,45 @@ struct _Element {
 };
 
 Element *element_ini(){
-    element *e;
-    e = (element *) malloc(siceof(element));
+    Element *e;
+    e = (Element *) malloc(siceof(Element));
     if(!e) return NULL;
     
     return s;
 }
 
-void element_destroy(element *e){
+void element_destroy(Element *e){
     if(e) point_destroy(e->info);
 }
 
-Status element_setInfo(element *e, point *p){
+Status element_setInfo(Element *e, Point *p){
     if(!e) return ERROR;
     
     e->info=point_copy(p);
     return OK;
 }
 
-Point *element_getInfo(element *e){
+Point *element_getInfo(Element *e){
     if(!e) return NULL;
     
     return e->info;
 }
 
-Element *element_copy(const element *e){
-    element *eCopy = NULL;
+Element *element_copy(const Element *e){
+    Element *eCopy = NULL;
     eCopy = element_ini;
     if(!e_copy) return NULL;
     
-    eCopy->info = point_copy (e->info);
+    eCopy->info = point_copy(e->info);
     return eCopy;
 }
 
-Bool element_equals(const element *e1, const element *e2){
+Bool element_equals(const Element *e1, const Element *e2){
     if(point_equals(e1->info, e2->info)==TRUE) return TRUE;
     else return FALSE;
 }
 
-int element_print(FILE *f, const element *e){
+int element_print(FILE *f, const Element *e){
     return point_print(f, e->info);
 }
 
