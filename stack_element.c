@@ -8,7 +8,7 @@
 
 struct _Stack {
     int top; 
-    Point *item[MAXSTACK];
+    Element *item[MAXSTACK];
 };
 
 stack *stack_ini(){
@@ -24,40 +24,40 @@ void stack_destroy(stack *s){
     int i;
     if(s){
         for(i=s.top; i>0; i--){
-            point_destroy(s->item[i]);
+            element_destroy(s->item[i]);
         }
         free(s);
 }
 
-Status stack_push(stack *s, const point *p){
+Status stack_push(stack *s, const element  *p){
     if(!s || !p) return ERROR;
     
     if(pila_llena) return ERROR;
     
-    s->item[s.top] = e;
+    s->item[s.top] = element_copy(e);
     s.top++;
     return OK;
 }
 
-Point stack_pop(stact *s){
-    Point *p;
+Element stack_pop(stact *s){
+    Element *e;
     if(pila_vacia==TRUE) return NULL;
-    p = point_ini(0, 0, +);
-    if(!p) return NULL;
+    e = element_ini();
+    if(!e) return NULL;
     
-    p = point_copy(s->item[s.top]);
+    e = element_copy(s->item[s.top]);
     s->item[s.top] = NULL;
     s.top--
     return e;
 }
 
-Point stack_top(const stact *s){
-    Point *p;
+Element stack_top(const stact *s){
+    Element *e;
     if(pila_vacia==TRUE) return NULL;
-    p = point_ini(0, 0, +);
+    e = element_ini();
     if(!p) return NULL;
     
-    p = point_copy(s->item[s.top]);
+    e = element_copy(s->item[s.top]);
     return e;
 }
 
@@ -72,9 +72,9 @@ Bool stack_isFULL(const stack *s){
 }
 
 int stack_print(FILE *f, const stack *s){
-    int i, j;
+    int i, j = 0;
     for(i=s.top, j=0; i>0; i--){
-        j = j + point_print(f, s->item[i]);
+        j = j + element_print(f, s->item[i]);
     }
     return j;
 }
