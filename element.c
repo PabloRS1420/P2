@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "element.h"
+#include "point.h"
 #include "types.h"
 
 
 struct _Element { 
-    point *info; 
+    Point *info; 
 };
 
 Element *element_ini(){
@@ -17,7 +18,7 @@ Element *element_ini(){
 }
 
 void element_destroy(element *e){
-    if(e) free(e);
+    if(e) point_destroy(e->info);
 }
 
 Status element_setInfo(element *e, point *p){
