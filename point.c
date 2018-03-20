@@ -28,9 +28,7 @@ Point *point_ini(int x, int y, char s){
 }
 
 void point_destroy(Point *p){
-    if (p){
-        free (p);
-    }
+    if (p) free (p);
 }
 
 int point_getCoordinateX(const Point *p){
