@@ -5,7 +5,7 @@
 
 
 struct _Element { 
-point *info; 
+    point *info; 
 };
 
 Element *element_ini(){
