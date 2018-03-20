@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "stack_element.h"
+#include "element.h"
 #include "types.h"
 
 #define MAXSTACK 100
 
 struct _Stack {
     int top; 
-    Point * item[MAXSTACK];
+    Point *item[MAXSTACK];
 };
 
 stack *stack_ini(){
@@ -20,7 +21,12 @@ stack *stack_ini(){
 }
 
 void stack_destroy(stack *s){
-    if(s) free(s);
+    int i;
+    if(s){
+        for(i=s.top; i>0; i--){
+            point_destroy(s->item[i]);
+        }
+        free(s);
 }
 
 Status stack_push(stack *s, const point *p){
@@ -66,7 +72,11 @@ Bool stack_isFULL(const stack *s){
 }
 
 int stack_print(FILE *f, const stack *s){
-    return fprintf(f, "%d, %", stack.top, stack_top(s));
+    int i, j;
+    for(i=s.top, j=0; i>0; i--){
+        j = j + point_print(f, s->item[i]);
+    }
+    return j;
 }
 
 
