@@ -24,7 +24,7 @@ void element_destroy(element *e){
 Status element_setInfo(element *e, point *p){
     if(!e) return ERROR;
     
-    e->info=p;
+    e->info=point_copy(p);
     return OK;
 }
 
@@ -39,8 +39,8 @@ Element *element_copy(const element *e){
     eCopy = element_ini;
     if(!e_copy) return NULL;
     
-    eCopy->info = point_copy (e->info)
-    return e_copy;
+    eCopy->info = point_copy (e->info);
+    return eCopy;
 }
 
 Bool element_equals(const element *e1, const element *e2){
