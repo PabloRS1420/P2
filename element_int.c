@@ -1,40 +1,39 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "element.h"
-#include "point.h"
+#include "element_int.h"
 #include "types.h"
 
 
-struct _Element { 
+struct _ElementI { 
     int *info; 
 };
 
-Element *element_ini(){
-    Element *e;
+ElementI *element_ini(){
+    ElementI *e;
     e = (Element *) malloc(siceof(Element));
     if(!e) return NULL;
     
     return s;
 }
 
-void element_destroy(Element *e){
+void element_destroy(ElementI *e){
     if(e) point_destroy(e->info);
 }
 
-Status element_setInfo(Element *e, int *i){
+Status element_setInfo(ElementI *e, int *i){
     if(!e) return ERROR;
     
     e->info=i;
     return OK;
 }
 
-int *element_getInfo(Element *e){
+int *element_getInfo(ElementI *e){
     if(!e) return NULL;
     
     return e->info;
 }
 
-Element *element_copy(const Element *e){
+ElementI *element_copy(const ElementI *e){
     Element *eCopy = NULL;
     eCopy = element_ini;
     if(!e_copy) return NULL;
@@ -43,12 +42,12 @@ Element *element_copy(const Element *e){
     return eCopy;
 }
 
-Bool element_equals(const Element *e1, const Element *e2){
+Bool element_equals(const ElementI *e1, const ElementI *e2){
     if(e1->info == e2->info) return TRUE;
     else return FALSE;
 }
 
-int element_print(FILE *f, const Element *e){
+int element_print(FILE *f, const ElementI *e){
     return fprintf(f, "%d", e->info);
 }
 
