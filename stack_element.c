@@ -51,7 +51,7 @@ Element *stack_pop(Stact *s){
     return e;
 }
 
-Element stack_top(const Stact *s){
+Element *stack_top(const Stact *s){
     Element *e;
     if(pila_vacia==TRUE) return NULL;
     e = element_ini();
