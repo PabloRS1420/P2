@@ -29,7 +29,7 @@ void stack_destroy(Stack *s){
         free(s);
 }
 
-Status stack_push(Stack *s, const Element  *p){
+Status stack_push(Stack *s, const Element *p){
     if(!s || !p) return ERROR;
     
     if(pila_llena) return ERROR;
@@ -39,7 +39,7 @@ Status stack_push(Stack *s, const Element  *p){
     return OK;
 }
 
-Element stack_pop(Stact *s){
+Element *stack_pop(Stact *s){
     Element *e;
     if(pila_vacia==TRUE) return NULL;
     e = element_ini();
