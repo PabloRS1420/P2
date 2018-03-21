@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include "stack_element_int.h"
-#include "element_int.h"
-#include "types.h"
 
 int main(int argc, char * argv[]){
     printf("> ./p2_e1 %d", argv[1]);
