@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include "stack_element.h"
-#include "element.h"
+#include "stack_element_int.h"
+#include "element_int.h"
 #include "types.h"
 
 int main(int argc, char * argv[]){
     printf("> ./p2_e1 %d", argv[1]);
-    stack *sTotal = stack_ini();
-    stack *sImpar = stack_ini();
-    stack *sPar = stack_ini();
+    StackI *sTotal = stack_ini();
+    StackI *sImpar = stack_ini();
+    StackI *sPar = stack_ini();
     int y, i;
     
     printf("Pila total (no llena, vacia):");
