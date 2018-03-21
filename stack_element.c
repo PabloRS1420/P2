@@ -11,7 +11,7 @@ struct _Stack {
     Element *item[MAXSTACK];
 };
 
-stack *stack_ini(){
+Stack *stack_ini(){
     Stack *s = NULL;
     s = (Stack *) malloc(siceof(Stack));
     if(!s) return NULL;
