@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "map.h"
-#include "point.h"
-#include "stack_element.h"
-#include "element.h"
-#include "types.h"
 
 typedef struct _Map {
     Point *point [4096] [4096];
