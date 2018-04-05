@@ -104,7 +104,7 @@ Status point_setCoordinateY(Point *p, const int y) {
 }
 
 Status point_setSymbol(Point *p, const char s){
-    if (s != 'I' || s != 'o' || s != '+' || s != ' '){
+    if (s != 'I' && s != 'o' && s != '+' && s != ' '){
         return ERROR;
     }
     p->symbol = s;
