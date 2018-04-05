@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "element.h"
-#include "point.h"
-#include "types.h"
-
 
 struct _Element { 
     Point *info; 
