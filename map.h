@@ -1,6 +1,14 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include "point.h"
+#include "stack_element.h"
+#include "element.h"
+#include "types.h"
+
+
 typedef enum { 
     RIGHT=0,  
     UP=1,  
