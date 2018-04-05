@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "element_int.h"
-#include "types.h"
-
 
 struct _ElementI { 
     int *info; 
