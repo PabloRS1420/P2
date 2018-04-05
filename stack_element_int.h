@@ -1,6 +1,11 @@
 #ifndef STACK_ELEMENT_INT_H
 #define STACK_ELEMENT_INT_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include "stack_element_int.h"
+#include "types.h"
+
 typedef struct _StackI StackI;
 
 StackI *stack_ini();
