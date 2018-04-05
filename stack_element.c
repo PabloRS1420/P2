@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "stack_element.h"
 #include "element.h"
-#include "types.h"
 
 #define MAXSTACK 100
 
