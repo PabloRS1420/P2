@@ -11,6 +11,10 @@ int main(int argc, char * argv[]){
     Element *e = element_ini();
     Point *p = point_ini(0, 0, +);
     FILE *fp = fopen("argv[1]", "r+");
+    if(fp == NULL) {
+      printf("Error abriendo el archivo");
+      return -1;
+   	}
     int nFil, nCol, i, j;
     char symbol;
     fscanf(fp, "%d %d", &nFil, &nCol);
@@ -35,4 +39,5 @@ int main(int argc, char * argv[]){
     }
    
     fclose(fp);
+    return 0;
 }
