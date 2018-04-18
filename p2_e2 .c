@@ -14,7 +14,7 @@ int main(int argc, char * argv[]){
     if(fp == NULL) {
       printf("Error abriendo el archivo");
       return -1;
-   	}
+    }
     int nFil, nCol, i, j;
     char symbol;
     fscanf(fp, "%d %d", &nFil, &nCol);
