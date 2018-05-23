@@ -42,7 +42,7 @@ element.o: element.c element.h point.h
 element_int.o: element_int.c element_int.h
 	$(CC) $(CFLAGS) -c element.c
 
-stack_element.o: stack_element.c stack_element.h element.h
+stack_element.o: stack_element.c stack_element.h
 	$(CC) $(CFLAGS) -c element.c
 
 stack_element_int.o: stack_element_int.c stack_element_int.h
@@ -56,14 +56,18 @@ clean:
 	rm -rf *.o $(EJS)
 
 run:
-	@echo ">>>>>>Running p1_e1"
-	./p1_e1
-	@echo ">>>>>>Running p1_e2"
-	./p1_e2 m1.txt
+	@echo ">>>>>>Running p2_e1"
+	./p2_e2
+	@echo ">>>>>>Running p2_e2"
+	./p2_e2 m1.txt
+	@echo ">>>>>>Running p2_e3"
+	./p2_e3 m1.txt
 
 runv:
-	@echo ">>>>>>Running p1_e1 with valgrind"
-	valgrind --leak-check=full ./p1_e1
-	@echo ">>>>>>Running p1_e2 with valgrind"
-	valgrind --leak-check=full ./p1_e2 m1.txt
+	@echo ">>>>>>Running p2_e1 with valgrind"
+	valgrind --leak-check=full ./p2_e1
+	@echo ">>>>>>Running p2_e2 with valgrind"
+	valgrind --leak-check=full ./p2_e2 m1.txt
+	@echo ">>>>>>Running p2_e3 with valgrind"
+	valgrind --leak-check=full ./p2_e3 m1.txt
 	
