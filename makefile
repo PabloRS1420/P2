@@ -3,7 +3,7 @@ all:		clean p2 dist cleantemp
 ########################################################
 CC=gcc
 CFLAGS= -g -Wall -pedantic -ansi
-EJS = p2_e1 p2_e2
+EJS = p2_e1 p2_e2 p2_e3
 ########################################################
 OBJECTSP2E1 = p2_e1.o stack_element_int.o element_int.o
 OBJECTSP2E2 = p2_e2.o map.o stack_element.o element.o point.o
