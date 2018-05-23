@@ -1,40 +1,62 @@
 all:		clean p2 dist cleantemp
 
-CFLAGS = -Wall -ansi -pedantic -g
- ##########################################################################
+########################################################
+CC=gcc
+CFLAGS= -g -Wall -pedantic -ansi
+EJS = p2_e1 p2_e2
+########################################################
+OBJECTSP2E1 = p2_e1.o point.o
+OBJECTSP2E2 = p2_e2.o map.o point.o
+########################################################
 
-p2_e1:	p2_e1.o element_int.o stack_element_int.o
-		gcc -o p2_e1.o element_int.o stack_element_int.o
+all: $(EJS) clear
 
-p2_e2:	element.o map.o point.o stack_element.o
-		gcc -o p2_e2 element.o map.o point.o stack_element.o
+p2_e1: $(OBJECTSP2E1)
+	$(CC) $(CFLAGS) -o p2_e1 $(OBJECTSP2E1)
 
-p2_e3:	element.o map.o point.o stack_element.o
-		gcc -o p2_e2 element.o map.o point.o stack_element.o
+p2_e2: $(OBJECTSP2E2)
+	$(CC) $(CFLAGS) -o p2_e2 $(OBJECTSP2E2)
 
-element_int.o:	element_int.c element_int.h types.h
-		gcc -c $(CFLAGS) element_int.c
+p2_e1.o: p2_e1.c point.h
+	$(CC) $(CFLAGS) -c p2_e1.c
 
-stack_element_int.o:	stack_element_int.c stack_element_int.h element_int.h types.h
-		gcc -c $(CFLAGS) stack_element_int.c
+p2_e2.o: p2_e2.c map.h
+	$(CC) $(CFLAGS) -c p2_e2.c
 
-element.o:	element.c element.h point.h types.h
-		gcc -c $(CFLAGS) element_int.c
+point.o: point.c point.h
+	$(CC) $(CFLAGS) -c point.c
 
-stack_element.o:	stack_element.c stack_element.h element.h types.h
-		gcc -c $(CFLAGS) stack_element.c
+map.o: map.c map.h stack_element.h element.h types.h
+	$(CC) $(CFLAGS) -c map.c
 
-point.o: 	point.c point.h types.h
-		gcc -c $(CFLAGS) point.c
+element.o: element.c element.h point.h types.h
+	$(CC) $(CFLAGS) -c element.c
 
-map.o:	map.c map.h stack_element.h element.h point.h types.h
-		gcc -c $(CFLAGS) game_loop.c
+element_int.o: element_int.c element_int.h types.h
+	$(CC) $(CFLAGS) -c element.c
 
-cleantemp:
-		rm -f *.o
+stack_element.o: stack_element.c stack_element.h element.h types.h
+	$(CC) $(CFLAGS) -c element.c
 
-dist:
-		tar cvzf goose.tgz *.c *.h *.dat makefile
+stack_element_int.o: stack_element_int.c stack_element_int.h
+	$(CC) $(CFLAGS) -c element_int.c
+
+
+clear:
+	rm -rf *.o 
 
 clean:
-		rm -f *.exe
+	rm -rf *.o $(EJS)
+
+run:
+	@echo ">>>>>>Running p1_e1"
+	./p1_e1
+	@echo ">>>>>>Running p1_e2"
+	./p1_e2 m1.txt
+
+runv:
+	@echo ">>>>>>Running p1_e1 with valgrind"
+	valgrind --leak-check=full ./p1_e1
+	@echo ">>>>>>Running p1_e2 with valgrind"
+	valgrind --leak-check=full ./p1_e2 m1.txt
+	
